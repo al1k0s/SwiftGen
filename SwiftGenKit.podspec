@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'SwiftGenKit'
-  s.version      = '6.1.0'
+  s.version      = '6.1.1'
   s.summary      = 'The SwiftGen framework responsible for parsing assets and turn them ' \
                    'in a dictionary representation suitable for Stencil templates'
 
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.cocoapods_version = '>= 1.4.0'
 
   s.source       = {
-    git: 'https://github.com/SwiftGen/SwiftGenKit.git',
+    git: 'https://github.com/al1k0s/SwiftGenKit.git',
     tag: s.version.to_s
   }
   s.source_files = 'Sources/**/*.swift'
