@@ -38,6 +38,8 @@
 		37DC60381F98D7DD00B7B31C /* config-missing-paths.yml in Resources */ = {isa = PBXBuildFile; fileRef = 37DC60311F98D1DA00B7B31C /* config-missing-paths.yml */; };
 		37DC60391F98D7DD00B7B31C /* config-missing-template.yml in Resources */ = {isa = PBXBuildFile; fileRef = 37DC602B1F98D1D900B7B31C /* config-missing-template.yml */; };
 		37DC603B1F98E74E00B7B31C /* config-absolute-paths-prefix.yml in Resources */ = {isa = PBXBuildFile; fileRef = 37DC603A1F98E74600B7B31C /* config-absolute-paths-prefix.yml */; };
+		44018313222FE9A50066040A /* ColorsColorsetFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44018311222FE7430066040A /* ColorsColorsetFileParser.swift */; };
+		4401831B22300B5A0066040A /* ColorsJSONFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401831922300B530066040A /* ColorsJSONFileParser.swift */; };
 		5DE172C4BAE478DDAA63064F /* Pods_swiftgen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00832FEC9F060E93DAD1228 /* Pods_swiftgen.framework */; };
 		80F8014301BF496E905CA2CF /* Pods_SwiftGenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DF0A0F13A222BCA7B60102 /* Pods_SwiftGenKit.framework */; };
 		846BDF9321ADB71B00DDCEE9 /* config-with-env-placeholder.yml in Resources */ = {isa = PBXBuildFile; fileRef = 846BDF9221ADB71B00DDCEE9 /* config-with-env-placeholder.yml */; };
@@ -73,7 +75,6 @@
 		DD428E001FC50F56001649D6 /* SwiftGenKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD428DF81FC50F56001649D6 /* SwiftGenKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD428E191FC50FBF001649D6 /* FontsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD428E071FC50FBF001649D6 /* FontsParser.swift */; };
 		DD428E1A1FC50FBF001649D6 /* ColorsCLRFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD428E091FC50FBF001649D6 /* ColorsCLRFileParser.swift */; };
-		DD428E1B1FC50FBF001649D6 /* ColorsJSONFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD428E0A1FC50FBF001649D6 /* ColorsJSONFileParser.swift */; };
 		DD428E1C1FC50FBF001649D6 /* ColorsTXTFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD428E0B1FC50FBF001649D6 /* ColorsTXTFileParser.swift */; };
 		DD428E1D1FC50FBF001649D6 /* ColorsXMLFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD428E0C1FC50FBF001649D6 /* ColorsXMLFileParser.swift */; };
 		DD428E1F1FC50FBF001649D6 /* InterfaceBuilderParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD428E0E1FC50FBF001649D6 /* InterfaceBuilderParser.swift */; };
@@ -316,6 +317,8 @@
 		37DC60301F98D1DA00B7B31C /* config-absolute-paths-direct.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "config-absolute-paths-direct.yml"; sourceTree = "<group>"; };
 		37DC60311F98D1DA00B7B31C /* config-missing-paths.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "config-missing-paths.yml"; sourceTree = "<group>"; };
 		37DC603A1F98E74600B7B31C /* config-absolute-paths-prefix.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "config-absolute-paths-prefix.yml"; sourceTree = "<group>"; };
+		44018311222FE7430066040A /* ColorsColorsetFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsColorsetFileParser.swift; sourceTree = "<group>"; };
+		4401831922300B530066040A /* ColorsJSONFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsJSONFileParser.swift; sourceTree = "<group>"; };
 		4CBF21A0D5701D1232758A8C /* Pods-SwiftGenKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftGenKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftGenKit/Pods-SwiftGenKit.release.xcconfig"; sourceTree = "<group>"; };
 		4D5D3E5746871F59AC9CA625 /* Pods_SwiftGenKit_SwiftGenKit_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftGenKit_SwiftGenKit_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8FC9E0F4B4EF9E07633BF2 /* Pods-swiftgen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftgen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftgen/Pods-swiftgen.debug.xcconfig"; sourceTree = "<group>"; };
@@ -356,7 +359,6 @@
 		DD428DF81FC50F56001649D6 /* SwiftGenKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGenKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD428E071FC50FBF001649D6 /* FontsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsParser.swift; sourceTree = "<group>"; };
 		DD428E091FC50FBF001649D6 /* ColorsCLRFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCLRFileParser.swift; sourceTree = "<group>"; };
-		DD428E0A1FC50FBF001649D6 /* ColorsJSONFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsJSONFileParser.swift; sourceTree = "<group>"; };
 		DD428E0B1FC50FBF001649D6 /* ColorsTXTFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsTXTFileParser.swift; sourceTree = "<group>"; };
 		DD428E0C1FC50FBF001649D6 /* ColorsXMLFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsXMLFileParser.swift; sourceTree = "<group>"; };
 		DD428E0E1FC50FBF001649D6 /* InterfaceBuilderParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InterfaceBuilderParser.swift; path = Sources/SwiftGenKit/Parsers/InterfaceBuilder/InterfaceBuilderParser.swift; sourceTree = SOURCE_ROOT; };
@@ -709,9 +711,10 @@
 			isa = PBXGroup;
 			children = (
 				DD428E091FC50FBF001649D6 /* ColorsCLRFileParser.swift */,
-				DD428E0A1FC50FBF001649D6 /* ColorsJSONFileParser.swift */,
 				DD428E0B1FC50FBF001649D6 /* ColorsTXTFileParser.swift */,
 				DD428E0C1FC50FBF001649D6 /* ColorsXMLFileParser.swift */,
+				4401831922300B530066040A /* ColorsJSONFileParser.swift */,
+				44018311222FE7430066040A /* ColorsColorsetFileParser.swift */,
 			);
 			name = FileTypeParser;
 			sourceTree = "<group>";
@@ -1424,7 +1427,6 @@
 				DDB0B99D209CE4B100E467C2 /* YamlContext.swift in Sources */,
 				DD9F687F20955E07004EB720 /* Font.swift in Sources */,
 				C33A142921064E3400D3CBA6 /* FetchRequest.swift in Sources */,
-				DD428E1B1FC50FBF001649D6 /* ColorsJSONFileParser.swift in Sources */,
 				DD9F688120955F57004EB720 /* CTFont.swift in Sources */,
 				DDCCACDD209551240017FB43 /* Scene.swift in Sources */,
 				DDCCACDB209551240017FB43 /* Platform.swift in Sources */,
@@ -1452,7 +1454,9 @@
 				DD9F687420955D0C004EB720 /* ColorsFileTypeParser.swift in Sources */,
 				DD9F687C20955D51004EB720 /* Catalog.swift in Sources */,
 				C322627121012F42001AC9CD /* Attribute.swift in Sources */,
+				44018313222FE9A50066040A /* ColorsColorsetFileParser.swift in Sources */,
 				DD428E271FC50FBF001649D6 /* StringsContext.swift in Sources */,
+				4401831B22300B5A0066040A /* ColorsJSONFileParser.swift in Sources */,
 				C38E571520FF8FB5009C9C23 /* CoreDataParser.swift in Sources */,
 				C322626F21012C42001AC9CD /* Bool.swift in Sources */,
 				DD428E211FC50FBF001649D6 /* StringsParser.swift in Sources */,

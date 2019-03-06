@@ -9,7 +9,7 @@ import PathKit
 
 extension AssetsCatalog {
   enum Entry {
-    case color(name: String, value: String)
+    case color(name: String, value: String, rgba: RGBA)
     case data(name: String, value: String)
     case group(name: String, isNamespaced: Bool, items: [Entry])
     case image(name: String, value: String)
@@ -65,7 +65,8 @@ extension AssetsCatalog.Entry {
     switch Constants.Item(rawValue: type) {
     case .colorSet?:
       let name = path.lastComponentWithoutExtension
-      self = .color(name: name, value: "\(prefix)\(name)")
+      let rgba = AssetsCatalog.Entry.colorRGBA(path: path, name: name)
+      self = .color(name: name, value: "\(prefix)\(name)", rgba: rgba)
     case .dataSet?:
       let name = path.lastComponentWithoutExtension
       self = .data(name: name, value: "\(prefix)\(name)")
@@ -99,6 +100,15 @@ extension AssetsCatalog.Entry {
     } else {
       return false
     }
+  }
+
+  private static func colorRGBA(path: Path, name: String) -> RGBA {
+    let parser = ColorsetFileParser()
+    let contentsFile = path + Path(Constants.path)
+    guard let color = try? parser.parseColor(contents: contentsFile, colorName: name) else {
+      return RGBA(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    return color
   }
 
   private static func metadata(for path: Path) -> [String: Any] {

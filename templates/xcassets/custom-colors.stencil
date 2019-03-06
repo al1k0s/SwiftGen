@@ -1,0 +1,35 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+{% if catalogs %}
+{% set enumName %}{{param.enumName|default:"Asset"}}{% endset %}
+{% set colorType %}{{param.colorTypeName|default:"ColorAsset"}}{% endset %}
+{% set dataType %}{{param.dataTypeName|default:"DataAsset"}}{% endset %}
+{% set imageType %}{{param.imageTypeName|default:"ImageAsset"}}{% endset %}
+{% set colorAlias %}{{param.colorAliasName|default:"AssetColorTypeAlias"}}{% endset %}
+{% set imageAlias %}{{param.imageAliasName|default:"AssetImageTypeAlias"}}{% endset %}
+{% set forceNamespaces %}{{param.forceProvidesNamespaces|default:"false"}}{% endset %}
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
+
+{% macro casesBlock assets %}
+{% for asset in assets %}
+{% if asset.type == "color" %}
+    {{accessModifier}} static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = #colorLiteral(red: {{asset.rgb.red}}, green: {{asset.rgb.green}}, blue: {{asset.rgb.blue}}, alpha: {{asset.rgb.alpha}})
+
+{% elif asset.items %}
+{% call casesBlock asset.items %}
+{% endif %}
+{% endfor %}
+{% endmacro %}
+// MARK: - Colors
+
+extension NSColor {
+{% for catalog in catalogs %}
+{% call casesBlock catalog.assets %}
+{% endfor %}
+}
+
+// swiftlint:enable identifier_name line_length type_body_length
+{% else %}
+// No color found
+{% endif %}

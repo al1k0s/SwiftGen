@@ -31,11 +31,17 @@ extension AssetsCatalog.Parser {
     // swiftlint:disable:next closure_body_length
     return entries.map { entry in
       switch entry {
-      case .color(let name, let value):
+      case .color(let name, let value, let rgba):
         return [
           "type": "color",
           "name": name,
-          "value": value
+          "value": value,
+          "rgb": [
+            "red": String(rgba.red),
+            "green": String(rgba.green),
+            "blue": String(rgba.blue),
+            "alpha": String(rgba.alpha)
+          ]
         ]
       case .data(let name, let value):
         return [
