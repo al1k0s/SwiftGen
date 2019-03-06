@@ -2,6 +2,10 @@
 
 ---
 
+## 6.1.1
+
+Added custom colors template.
+
 ## 6.1.0
 
 ### Changes in core dependencies of SwiftGen
